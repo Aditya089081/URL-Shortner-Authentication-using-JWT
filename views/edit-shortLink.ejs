@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="/css/edit.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <%- include('partials/navbar') %>
+
+  <!-- Main Section -->
+  <main class="main-container">
+    <!-- URL Form Section -->
+    <section class="form-section">
+      <h2>Shorten Your URL</h2>
+      <form action="/edit/<%=id%>" method="POST">
+        <label for="url">Enter URL</label>
+        <input type="url" id="url" name="url" value = <%= url %> required />
+
+        <label for="shortcode">Custom Short Code</label>
+        <input type="text" id="shortcode" name="shortcode" value="<%= shortcode %>" />
+
+
+        <button type="submit">Update</button>
+      </form>
+      </section>
+      
+  </main>
+
+  <!-- Optional Footer -->
+  <%- include('partials/footer') %>
+</body>
+</html>
